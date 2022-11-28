@@ -7,9 +7,14 @@ class RouteThreeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments;
     return MainLayout(
       title: 'Route three',
       children: [
+        Text(
+          'arguments three page: ${arguments}',
+          textAlign: TextAlign.center,
+        ),
         ElevatedButton(
           onPressed: () {
             Navigator.of(context).pop();
