@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navi_codefactory/layout/main_layout.dart';
+import 'package:navi_codefactory/screen/route_two_screen.dart';
 
 class RouteOneScreen extends StatelessWidget {
   final int number;
@@ -20,6 +21,17 @@ class RouteOneScreen extends StatelessWidget {
             Navigator.of(context).pop(456);
           },
           child: Text('pop'),
+        ),
+        ElevatedButton(
+          //스택 stack 구조 homescren > routeone > routetwo
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => RouteTwoScreen(),
+              ),
+            );
+          },
+          child: Text('PUSH'),
         ),
       ],
     );

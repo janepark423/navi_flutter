@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../layout/main_layout.dart';
+
 class RouteTwoScreen extends StatelessWidget {
   const RouteTwoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('route 2'),
-      ),
+    return MainLayout(
+      title: 'Route two',
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: Text('pop'),
+        ),
+      ],
     );
   }
 }
