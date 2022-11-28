@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:navi_codefactory/layout/main_layout.dart';
 
 class RouteOneScreen extends StatelessWidget {
-  const RouteOneScreen({Key? key}) : super(key: key);
+  final int number;
+
+  const RouteOneScreen({required this.number, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Route one'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ElevatedButton(onPressed: (){
-              Navigator.of(context).pop;
-            }, child: Text('pop'),),
-          ],
+    return MainLayout(
+      title: 'Rount 1 page',
+      children: [
+        Text(
+          number.toString(),
+          textAlign: TextAlign.center,
         ),
-      ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop(456);
+          },
+          child: Text('pop'),
+        ),
+      ],
     );
   }
 }

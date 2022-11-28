@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navi_codefactory/layout/main_layout.dart';
 import 'package:navi_codefactory/screen/route_one_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,29 +7,23 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('home screen'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => RouteOneScreen(),
-                  ),
-                );
-              },
-              child: Text('push'),
-            ),
-          ],
+    return MainLayout(
+      title: 'Home Screen..',
+      children: [
+        ElevatedButton(
+          onPressed: () async {
+            final result = await Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => RouteOneScreen(
+                  number: 123,
+                ),
+              ),
+            );
+            print(result);
+          },
+          child: Text('push'),
         ),
-      ),
+      ],
     );
   }
 }

@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:navi_codefactory/screen/route_one_screen.dart';
+
+class MainLayout extends StatelessWidget {
+  final String title;
+  final List<Widget> children;
+
+  MainLayout({required this.title, required this.children, Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: children,
+        ),
+      ),
+    );
+  }
+}
