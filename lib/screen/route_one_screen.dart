@@ -3,9 +3,9 @@ import 'package:navi_codefactory/layout/main_layout.dart';
 import 'package:navi_codefactory/screen/route_two_screen.dart';
 
 class RouteOneScreen extends StatelessWidget {
-  final int number;
+  final int? number;
 
-  const RouteOneScreen({required this.number, Key? key}) : super(key: key);
+  const RouteOneScreen({this.number, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
