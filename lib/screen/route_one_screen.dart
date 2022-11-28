@@ -13,7 +13,7 @@ class RouteOneScreen extends StatelessWidget {
       title: 'Rount 1 page',
       children: [
         Text(
-          number.toString(),
+          'arguments: ${number.toString()}',
           textAlign: TextAlign.center,
         ),
         ElevatedButton(
@@ -28,6 +28,9 @@ class RouteOneScreen extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => RouteTwoScreen(),
+                settings: RouteSettings(
+                  arguments: 789,
+                ),
               ),
             );
           },
